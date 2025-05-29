@@ -106,7 +106,8 @@ export const siteConfig = {
         // Placeholders: {total}
         description: "Kicks totali: {total}"
       },
-      punishments: {
+    },
+        punishments: {
         ban: {
           // Placeholders: {name}, {staff}, {reason}, {time}, {duration}, {server}
           description: `
@@ -148,7 +149,6 @@ export const siteConfig = {
       📜 Motivo: {reason}
       🕒 Data: {time}
     `
-        }
       }
     }
   }
