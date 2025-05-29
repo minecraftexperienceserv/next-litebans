@@ -19,7 +19,7 @@ export const MainsiteButton = () => (
         "w-9 px-0"
       )}
     >
-      <Icons.gitHub className="h-4 w-4" />
+      <Icons.homepage className="h-4 w-4" />
       <span className="sr-only">Homepage</span>
     </div>
   </Link>
