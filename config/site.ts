@@ -1,13 +1,13 @@
 export const siteConfig = {
-  title: "Next Litebans",
+  title: "McExp.it Sanzioni",
   logo: "/logo.webp",
   favicon: "/logo.webp",
   languages: {
     available: [
+      "it",
       "en",
-      "es",
     ],
-    default: "en",
+    default: "it",
   },
   console: {
     name: "Console", // Just for filter badge
@@ -16,139 +16,139 @@ export const siteConfig = {
     body: "/console-body.webp",
     bust: "/console-bust.webp",
   },
-  defaultPlayerLookup: "YoSoyVilla",
+  defaultPlayerLookup: "_Tbenatti_",
   // When enabled, body and bust images will show a steve skin
   bedrock: {
     enabled: false,
     prefix: "BP_",
   },
   openGraph: {
-    dateFormat: "yyyy-MM-dd hh:mm:ss",
+    dateFormat: "dd-MM-yyyy hh:mm:ss",
     pages: {
       main: {
         // Placeholders: {total}, {bans}, {mutes}, {kicks}, {warns}
         description: `
-        next-litebans punishment web interface.
+    Visualizza o cerca nella lista sanzioni del network McExp.it.
 
-        Total punishments: {total}
+    Sanzioni totali: {total}
 
-          🚫 Bans: {bans}
-          🔇 Mutes: {mutes}
-          ⚠️ Warns: {warns}
-          ❌ Kicks: {kicks}
-        `
+      🚫 Bans: {bans}
+      🔇 Mutes: {mutes}
+      ⚠️ Warns: {warns}
+      ❌ Kicks: {kicks}
+  `
       },
       history: {
         // Placeholders: {total}, {bans}, {mutes}, {kicks}, {warns}
         description: `
-        Total punishments: {total}
+    Sanzioni totali: {total}
 
-          🚫 Bans: {bans}
-          🔇 Mutes: {mutes}
-          ⚠️ Warns: {warns}
-          ❌ Kicks: {kicks}
-        `
+      🚫 Bans: {bans}
+      🔇 Mutes: {mutes}
+      ⚠️ Warns: {warns}
+      ❌ Kicks: {kicks}
+  `
       },
       player: {
         // Placeholders: {name}, {total}, {bans}, {mutes}, {kicks}, {warns}
         description: `
-        {name}'s punishments.
+    Sanzioni di {name}.
 
-        Total punishments: {total}
+    Sanzioni totali: {total}
 
-          🚫 Bans: {bans}
-          🔇 Mutes: {mutes}
-          ⚠️ Warns: {warns}
-          ❌ Kicks: {kicks}
-        `,
+      🚫 Bans: {bans}
+      🔇 Mutes: {mutes}
+      ⚠️ Warns: {warns}
+      ❌ Kicks: {kicks}
+  `,
         bans: {
           description: `
-          {name}'s bans.
+      Bans di {name}.
 
-          Total bans: {total}
-          `,
+      Bans totali: {total}
+    `,
         },
         mutes: {
           description: `
-          {name}'s mutes.
+      Mutes di {name}.
 
-          Total mutes: {total}
-          `,
+      Mutes totali: {total}
+    `,
         },
         warns: {
           description: `
-          {name}'s warns.
+      Warns di {name}.
 
-          Total warns: {total}
-          `,
+      Warns totali: {total}
+    `,
         },
         kicks: {
           description: `
-          {name}'s kicks.
+      Kicks di {name}.
 
-          Total kicks: {total}
-          `,
+      Kicks totali: {total}
+    `,
         },
       },
       bans: {
         // Placeholders: {total}
-        description: "Total bans: {total}"
+        description: "Bans totali: {total}"
       },
       mutes: {
         // Placeholders: {total}
-        description: "Total mutes: {total}"
+        description: "Mutes totali: {total}"
       },
       warns: {
         // Placeholders: {total}
-        description: "Total warns: {total}"
+        description: "Warns totali: {total}"
       },
       kicks: {
         // Placeholders: {total}
-        description: "Total kicks: {total}"
+        description: "Kicks totali: {total}"
       },
-    },
-    punishments: {
-      ban: {
-        // Placeholders: {name}, {staff}, {reason}, {time}, {duration}, {server}
-        description: `
-        👤 User: {name}
-        👮 Staff: {staff}
+      punishments: {
+        ban: {
+          // Placeholders: {name}, {staff}, {reason}, {time}, {duration}, {server}
+          description: `
+      👤 Utente: {name}
+      👮 Staff: {staff}
 
-        📜 Reason: {reason}
-        🕒 Date: {time}
-        ⌛ Duration: {duration}
-        `
-      },
-      mute: {
-        // Placeholders: {name}, {staff}, {reason}, {time}, {duration}, {server}
-        description: `
-        👤 User: {name}
-        👮 Staff: {staff}
+      📜 Motivo: {reason}
+      🕒 Data: {time}
+      ⌛ Durata: {duration}
+    `
+        },
+        mute: {
+          // Placeholders: {name}, {staff}, {reason}, {time}, {duration}, {server}
+          description: `
+      👤 Utente: {name}
+      👮 Staff: {staff}
 
-        📜 Reason: {reason}
-        🕒 Date: {time}
-        ⌛ Duration: {duration}
-        `
-      },
-      warn: {
-        // Placeholders: {name}, {staff}, {reason}, {time}, {server}
-        description: `
-        👤 User: {name}
-        👮 Staff: {staff}
+      📜 Motivo: {reason}
+      🕒 Data: {time}
+      ⌛ Durata: {duration}
+    `
+        },
+        warn: {
+          // Placeholders: {name}, {staff}, {reason}, {time}, {server}
+          description: `
+      👤 Utente: {name}
+      👮 Staff: {staff}
 
-        📜 Reason: {reason}
-        🕒 Date: {time}
-        `
-      },
-      kick: {
-        // Placeholders: {name}, {staff}, {reason}, {time}, {server}
-        description: `
-        👤 User: {name}
-        👮 Staff: {staff}
+      📜 Motivo: {reason}
+      🕒 Data: {time}
+    `
+        },
+        kick: {
+          // Placeholders: {name}, {staff}, {reason}, {time}, {server}
+          description: `
+      👤 Utente: {name}
+      👮 Staff: {staff}
 
-        📜 Reason: {reason}
-        🕒 Date: {time}
-        `
+      📜 Motivo: {reason}
+      🕒 Data: {time}
+    `
+        }
       }
     }
   }
