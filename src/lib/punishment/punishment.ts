@@ -65,6 +65,10 @@ const getPunishments = async (page: number, player?: string, staff?: string) => 
   `
   const punishments = await db.$queryRaw(query) as PunishmentListItem[];
 
+  punishments.forEach(p => {
+    p.reason = p.reason?.replace(/§./g, "") ?? "";
+  });
+
   return punishments;
 
 }
@@ -72,17 +76,16 @@ const getPunishments = async (page: number, player?: string, staff?: string) => 
 const sanitizePunishments = async (dictionary: Dictionary, punishments: PunishmentListItem[]) => {
   const sanitized = await Promise.all(punishments.map(async (punishment) => {
     const name = await getPlayerName(punishment.uuid!);
-    const until = (punishment.type == "ban" || punishment.type == "mute") ? 
-                    punishment.until.toString() === "0" ? 
-                    dictionary.table.permanent : 
-                    new Date(parseInt(punishment.until.toString())) : 
+    const until = (punishment.type == "ban" || punishment.type == "mute") ?
+                    punishment.until.toString() === "0" ?
+                    dictionary.table.permanent :
+                    new Date(parseInt(punishment.until.toString())) :
                   "";
     const status = (punishment.type == "ban" || punishment.type == "mute") ?
-                    until == dictionary.table.permanent ? 
-                    (punishment.active ? true : false) : 
+                    until == dictionary.table.permanent ?
+                    (punishment.active ? true : false) :
                     (until < new Date() ? false : undefined) :
                   undefined;
-    const cleanedReason = punishment.reason?.replace(/§./g, "") ?? "";
     return {
       ...punishment,
       id: punishment.id.toString(),
@@ -90,8 +93,7 @@ const sanitizePunishments = async (dictionary: Dictionary, punishments: Punishme
       console: punishment.banned_by_uuid === siteConfig.console.uuid,
       status,
       until,
-      name,
-      reason: cleanedReason
+      name
     }
   }));
 
