@@ -65,10 +65,6 @@ const getPunishments = async (page: number, player?: string, staff?: string) => 
   `
   const punishments = await db.$queryRaw(query) as PunishmentListItem[];
 
-  punishments.forEach(p => {
-    p.reason = p.reason?.replace(/[§&]./g, "") ?? "";
-  });
-
   return punishments;
 
 }
@@ -86,7 +82,6 @@ const sanitizePunishments = async (dictionary: Dictionary, punishments: Punishme
                     (punishment.active ? true : false) :
                     (until < new Date() ? false : undefined) :
                   undefined;
-    const cleanedReason = punishment.reason?.replace(/[§&]./g, "") ?? "";
 
     return {
       ...punishment,
@@ -96,7 +91,6 @@ const sanitizePunishments = async (dictionary: Dictionary, punishments: Punishme
       status,
       until,
       name,
-      reason: cleanedReason
     }
   }));
 
