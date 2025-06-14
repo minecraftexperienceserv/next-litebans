@@ -86,6 +86,8 @@ const sanitizePunishments = async (dictionary: Dictionary, punishments: Punishme
                     (punishment.active ? true : false) :
                     (until < new Date() ? false : undefined) :
                   undefined;
+    const cleanedReason = punishment.reason?.replace(/[§&]./g, "") ?? "";
+
     return {
       ...punishment,
       id: punishment.id.toString(),
@@ -93,7 +95,8 @@ const sanitizePunishments = async (dictionary: Dictionary, punishments: Punishme
       console: punishment.banned_by_uuid === siteConfig.console.uuid,
       status,
       until,
-      name
+      name,
+      reason: cleanedReason
     }
   }));
 
