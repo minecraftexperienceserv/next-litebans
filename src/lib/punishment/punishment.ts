@@ -66,7 +66,7 @@ const getPunishments = async (page: number, player?: string, staff?: string) => 
   const punishments = await db.$queryRaw(query) as PunishmentListItem[];
 
   punishments.forEach(p => {
-    p.reason = p.reason?.replace(/§./g, "") ?? "";
+    p.reason = p.reason?.replace(/[§&]./g, "") ?? "";
   });
 
   return punishments;
